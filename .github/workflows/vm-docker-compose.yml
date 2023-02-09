@@ -21,11 +21,10 @@ jobs:
           password: ${{ secrets.PASSWORD }}
           port: ${{ secrets.PORT }}
           script_stop: true
-          script: |
-            rm -rf ${{ env.RELEASE_DIR }}
+          script: |          
             mkdir -p ${{ env.RELEASE_DIR }}
 
-      - name: Copy single file to remote
+      - name: Copy files to remote
         uses: garygrossgarten/github-action-scp@release
         with:
           local: ./
@@ -33,3 +32,16 @@ jobs:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.PASSWORD }}
+
+      - name: Docker Compose Up
+        uses: appleboy/ssh-action@v0.1.7
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          password: ${{ secrets.PASSWORD }}
+          port: ${{ secrets.PORT }}
+          script_stop: false
+          script: |
+            docker-compose down
+            cd ${{ env.RELEASE_DIR }}
+            docker-compose up -d --build
