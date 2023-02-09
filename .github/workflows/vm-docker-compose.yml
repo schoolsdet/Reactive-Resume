@@ -42,6 +42,5 @@ jobs:
           port: ${{ secrets.PORT }}
           script_stop: false
           script: |
-            docker-compose down
             cd ${{ env.RELEASE_DIR }}
             docker-compose up -d --build
