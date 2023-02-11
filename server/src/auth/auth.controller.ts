@@ -4,6 +4,7 @@ import { User } from '@/decorators/user.decorator';
 import { User as UserEntity } from '@/users/entities/user.entity';
 
 import { AuthService } from './auth.service';
+import { AutoRegisterDto } from './dto/auto-register.dto';
 import { ForgotPasswordDto } from './dto/forgot-password.dto';
 import { RegisterDto } from './dto/register.dto';
 import { ResetPasswordDto } from './dto/reset-password.dto';
@@ -36,7 +37,7 @@ export class AuthController {
     return { user, accessToken };
   }
   @Post('auto-register')
-  async autoRegister(@Body() registerDto: RegisterDto) {
+  async autoRegister(@Body() registerDto: AutoRegisterDto) {
     // const user = await this.authService.register(registerDto);
     // const accessToken = this.authService.getAccessToken(user.id);
 
