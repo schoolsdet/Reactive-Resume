@@ -79,32 +79,32 @@ const Home: NextPage = () => {
         </div>
       </div>
 
-      {/*<section className={styles.section}>*/}
-      {/*  <h6>{t<string>('landing.summary.heading')}</h6>*/}
+      <section className={styles.section}>
+        <h6>{t<string>('landing.summary.heading')}</h6>
 
-      {/*  <p>{t<string>('landing.summary.body')}</p>*/}
-      {/*</section>*/}
+        <p>{t<string>('landing.summary.body')}</p>
+      </section>
 
-      {/*<section className={styles.section}>*/}
-      {/*  <h6>{t<string>('landing.features.heading')}</h6>*/}
+      <section className={styles.section}>
+        <h6>{t<string>('landing.features.heading')}</h6>
 
-      {/*  <ul className="list-inside list-disc leading-loose">*/}
-      {/*    <li>{t<string>('landing.features.list.free')}</li>*/}
-      {/*    <li>{t<string>('landing.features.list.ads')}</li>*/}
-      {/*    <li>{t<string>('landing.features.list.tracking')}</li>*/}
-      {/*    <li>{t<string>('landing.features.list.languages')}</li>*/}
-      {/*    <li>{t<string>('landing.features.list.import')}</li>*/}
-      {/*    <li>{t<string>('landing.features.list.export')}</li>*/}
-      {/*    <li>*/}
-      {/*      <Trans t={t} i18nKey="landing.features.list.more">*/}
-      {/*        And a lot of exciting features,*/}
-      {/*        <a href={`${GITHUB_URL}#features`} target="_blank" rel="noreferrer">*/}
-      {/*          click here to know more*/}
-      {/*        </a>*/}
-      {/*      </Trans>*/}
-      {/*    </li>*/}
-      {/*  </ul>*/}
-      {/*</section>*/}
+        <ul className="list-inside list-disc leading-loose">
+          <li>{t<string>('landing.features.list.free')}</li>
+          <li>{t<string>('landing.features.list.ads')}</li>
+          <li>{t<string>('landing.features.list.tracking')}</li>
+          <li>{t<string>('landing.features.list.languages')}</li>
+          <li>{t<string>('landing.features.list.import')}</li>
+          <li>{t<string>('landing.features.list.export')}</li>
+          <li>
+            <Trans t={t} i18nKey="landing.features.list.more">
+              And a lot of exciting features,
+              <a href={`${GITHUB_URL}#features`} target="_blank" rel="noreferrer">
+                click here to know more
+              </a>
+            </Trans>
+          </li>
+        </ul>
+      </section>
 
       <section className={styles.section}>
         <h6>{t<string>('landing.screenshots.heading')}</h6>
