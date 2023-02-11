@@ -79,8 +79,6 @@ services:
     restart: always
     ports:
       - "127.0.0.1:34343:34343"
-    networks:
-      - react-express
 
 
 volumes:
