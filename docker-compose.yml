@@ -29,8 +29,8 @@ services:
     depends_on:
       - postgres
     environment:
-      - PUBLIC_URL=http://104.207.148.94:3000
-      - PUBLIC_SERVER_URL=http://104.207.148.94:3100
+      - PUBLIC_URL=https://resume.sdet.school
+      - PUBLIC_SERVER_URL=https://resume.sdet.school/api
       - PUBLIC_GOOGLE_CLIENT_ID=
       - POSTGRES_DB=postgres
       - POSTGRES_USER=postgres
@@ -57,7 +57,7 @@ services:
       - STORAGE_SECRET_KEY=
       - PDF_DELETION_TIME=
 
-  client:  
+  client:
     build:
       context: .
       dockerfile: ./client/Dockerfile
@@ -67,9 +67,21 @@ services:
     depends_on:
       - server
     environment:
-      - PUBLIC_URL=http://104.207.148.94:3000
-      - PUBLIC_SERVER_URL=http://104.207.148.94:3100
+      - PUBLIC_URL=https://resume.sdet.school
+      - PUBLIC_SERVER_URL=https://resume.sdet.school/api
       - PUBLIC_GOOGLE_CLIENT_ID=
+
+
+  proxy:
+    build:
+      dockerfile: Dockerfile
+      context: "./proxy"
+    restart: always
+    ports:
+      - "127.0.0.1:${PROXY_PORT}:34343"
+    networks:
+      - react-express
+
 
 volumes:
   pgdata:
