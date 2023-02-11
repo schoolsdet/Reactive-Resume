@@ -35,7 +35,14 @@ export class AuthController {
 
     return { user, accessToken };
   }
+  @Post('auto-register')
+  async autoRegister(@Body() registerDto: RegisterDto) {
+    // const user = await this.authService.register(registerDto);
+    // const accessToken = this.authService.getAccessToken(user.id);
 
+    return 200;
+    // return { user, accessToken };
+  }
   @HttpCode(200)
   @UseGuards(LocalAuthGuard)
   @Post('login')

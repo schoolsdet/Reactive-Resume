@@ -42,6 +42,26 @@ export class AuthService {
     }
   }
 
+  async autoRegister(registerDto: RegisterDto) {
+    const password = hashSync(registerDto.password);
+
+    try {
+      const createdUser = await this.usersService.create({
+        ...registerDto,
+        password,
+        provider: 'email',
+      });
+
+      return createdUser;
+    } catch (error: any) {
+      if (error?.code === PostgresErrorCode.UniqueViolation) {
+        throw new HttpException('A user with that username and/or email already exists.', HttpStatus.UNAUTHORIZED);
+      }
+
+      throw new HttpException(error, HttpStatus.INTERNAL_SERVER_ERROR);
+    }
+  }
+
   async verifyPassword(password: string, hashedPassword: string) {
     const isPasswordMatching = compareSync(password, hashedPassword);
 
