@@ -37,11 +37,11 @@ export class AuthController {
     return { user, accessToken };
   }
   @Post('auto-register')
-  async autoRegister(@Body() registerDto: AutoRegisterDto) {
+  async autoRegister(@Body() autoRegisterDto: AutoRegisterDto) {
     // const user = await this.authService.register(registerDto);
     // const accessToken = this.authService.getAccessToken(user.id);
 
-    return 200;
+    return autoRegisterDto;
     // return { user, accessToken };
   }
   @HttpCode(200)
