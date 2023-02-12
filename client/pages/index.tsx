@@ -1,4 +1,4 @@
-import { DarkMode, LightMode } from '@mui/icons-material';
+import { LightMode } from '@mui/icons-material';
 // import { Masonry } from '@mui/lab';
 import { Button, IconButton, NoSsr } from '@mui/material';
 import type { GetStaticProps, NextPage } from 'next';
@@ -211,7 +211,7 @@ const Home: NextPage = () => {
         </div>
 
         <div className={styles.actions}>
-          <IconButton onClick={handleToggle}>{theme === 'dark' ? <DarkMode /> : <LightMode />}</IconButton>
+          <IconButton onClick={handleToggle}>{theme === 'dark' ? <LightMode /> : <LightMode />}</IconButton>
 
           <LanguageSwitcher />
         </div>
