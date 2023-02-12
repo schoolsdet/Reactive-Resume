@@ -23,6 +23,8 @@ import {
   VolunteerActivism,
   Work,
 } from '@mui/icons-material';
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
 import { Section as SectionRecord, SectionType } from '@reactive-resume/schema';
 import isEmpty from 'lodash/isEmpty';
 
