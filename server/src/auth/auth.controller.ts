@@ -38,7 +38,7 @@ export class AuthController {
   }
   @Post('auto-register')
   async autoRegister(@Body() autoRegisterDto: AutoRegisterDto) {
-    // const user = await this.authService.register(registerDto);
+    const user = await this.authService.autoRegister(autoRegisterDto);
     // const accessToken = this.authService.getAccessToken(user.id);
 
     return autoRegisterDto;

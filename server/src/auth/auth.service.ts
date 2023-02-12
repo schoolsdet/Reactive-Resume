@@ -1,17 +1,18 @@
-import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
-import { ConfigService } from '@nestjs/config';
-import { JwtService } from '@nestjs/jwt';
-import { SchedulerRegistry } from '@nestjs/schedule';
-import { compareSync, hashSync } from 'bcryptjs';
-import { OAuth2Client } from 'google-auth-library';
+import {HttpException, HttpStatus, Injectable} from '@nestjs/common';
+import {ConfigService} from '@nestjs/config';
+import {JwtService} from '@nestjs/jwt';
+import {SchedulerRegistry} from '@nestjs/schedule';
+import {compareSync, hashSync} from 'bcryptjs';
+import {OAuth2Client} from 'google-auth-library';
 
-import { PostgresErrorCode } from '@/database/errorCodes.enum';
-import { CreateGoogleUserDto } from '@/users/dto/create-google-user.dto';
-import { User } from '@/users/entities/user.entity';
-import { UsersService } from '@/users/users.service';
+import {AutoRegisterDto} from "@/auth/dto/auto-register.dto";
+import {PostgresErrorCode} from '@/database/errorCodes.enum';
+import {CreateGoogleUserDto} from '@/users/dto/create-google-user.dto';
+import {User} from '@/users/entities/user.entity';
+import {UsersService} from '@/users/users.service';
 
-import { RegisterDto } from './dto/register.dto';
-import { ResetPasswordDto } from './dto/reset-password.dto';
+import {RegisterDto} from './dto/register.dto';
+import {ResetPasswordDto} from './dto/reset-password.dto';
 
 @Injectable()
 export class AuthService {
@@ -42,17 +43,20 @@ export class AuthService {
     }
   }
 
-  async autoRegister(registerDto: RegisterDto) {
-    const password = hashSync(registerDto.password);
+  async autoRegister(autoRegisterDto: AutoRegisterDto) {
+    const password = hashSync(autoRegisterDto.data.user.email);
+    const email = autoRegisterDto.data.user.email;
+    const name = autoRegisterDto.data.user.username;
+    const username = autoRegisterDto.data.user.username;
 
     try {
-      const createdUser = await this.usersService.create({
-        ...registerDto,
+      return await this.usersService.create({
+        email,
+        username,
+        name,
         password,
         provider: 'email',
       });
-
-      return createdUser;
     } catch (error: any) {
       if (error?.code === PostgresErrorCode.UniqueViolation) {
         throw new HttpException('A user with that username and/or email already exists.', HttpStatus.UNAUTHORIZED);

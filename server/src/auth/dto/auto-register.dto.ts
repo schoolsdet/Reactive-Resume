@@ -1,8 +1,12 @@
-import {IsNotEmpty, IsObject} from 'class-validator';
+import {IsNotEmpty} from 'class-validator';
 
 export class AutoRegisterDto {
 
-  @IsObject()
   @IsNotEmpty()
-  data: object
+  data: {
+    user: {
+      email: string,
+      username: string
+    }
+  }
 }
