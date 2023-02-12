@@ -5,7 +5,7 @@ type Props = {
 };
 
 const Logo: React.FC<Props> = ({ size = 64 }) => (
-  <Image alt="Reactive Resume" src="/images/logos/logo.svg" className="rounded" width={size} height={size} priority />
+  <Image alt="Reactive Resume" src="/images/logos/sdet-school-logo.png" className="rounded" width="433" height="100" priority />
 );
 
 export default Logo;
