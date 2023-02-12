@@ -38,7 +38,7 @@ const Home: NextPage = () => {
 
   const handleLogin = () => dispatch(setModalState({ modal: 'auth.login', state: { open: true } }));
   const handleRegister = () => dispatch(setModalState({ modal: 'auth.register', state: { open: true } }));
-  const handleToggle = () => dispatch(setTheme({ theme: theme === 'light' ? 'light' : 'dark' }));
+  const handleToggle = () => dispatch(setTheme({ theme: theme === 'light' ? 'dark' : 'light' }));
   const handleLogout = () => dispatch(logout());
 
   return (
