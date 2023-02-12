@@ -1,4 +1,4 @@
-import { LightMode } from '@mui/icons-material';
+import { DarkMode, LightMode } from '@mui/icons-material';
 // import { Masonry } from '@mui/lab';
 import { Button, IconButton, NoSsr } from '@mui/material';
 import type { GetStaticProps, NextPage } from 'next';
@@ -38,7 +38,7 @@ const Home: NextPage = () => {
 
   const handleLogin = () => dispatch(setModalState({ modal: 'auth.login', state: { open: true } }));
   const handleRegister = () => dispatch(setModalState({ modal: 'auth.register', state: { open: true } }));
-  const handleToggle = () => dispatch(setTheme({ theme: theme === 'light' ? 'dark' : 'light' }));
+  const handleToggle = () => dispatch(setTheme({ theme: theme === 'light' ? 'light' : 'dark' }));
   const handleLogout = () => dispatch(logout());
 
   return (
@@ -211,7 +211,7 @@ const Home: NextPage = () => {
         </div>
 
         <div className={styles.actions}>
-          <IconButton onClick={handleToggle}>{theme === 'dark' ? <LightMode /> : <LightMode />}</IconButton>
+          <IconButton onClick={handleToggle}>{theme === 'dark' ? <DarkMode /> : <LightMode />}</IconButton>
 
           <LanguageSwitcher />
         </div>
