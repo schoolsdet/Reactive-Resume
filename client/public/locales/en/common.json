@@ -15,8 +15,8 @@
   "date": {
     "present": "Present"
   },
-  "subtitle": "A free and open source resume builder.",
-  "title": "Reactive Resume",
+  "subtitle": "Resume builder.",
+  "title": "Reactive Resume @SDET School",
   "toast": {
     "error": {
       "upload-file-size": "Please upload only files under 2 megabytes.",
