@@ -35,10 +35,6 @@ const Basics = () => {
           <div className="grid w-full gap-2 sm:col-span-2">
             <ResumeInput label={t<string>('builder.leftSidebar.sections.basics.name.label')} path="basics.name" />
 
-            <Button variant="outlined" startIcon={<PhotoFilter />} onClick={handleClick}>
-              {t<string>('builder.leftSidebar.sections.basics.actions.photo-filters')}
-            </Button>
-
             <Popover
               open={Boolean(anchorEl)}
               anchorEl={anchorEl}
