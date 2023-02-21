@@ -6,7 +6,6 @@ import Heading from '@/components/shared/Heading';
 import ResumeInput from '@/components/shared/ResumeInput';
 
 import PhotoFilters from './PhotoFilters';
-import PhotoUpload from './PhotoUpload';
 
 const Basics = () => {
   const { t } = useTranslation();
@@ -23,10 +22,6 @@ const Basics = () => {
 
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
         <div className="grid items-center gap-4 sm:col-span-2 sm:grid-cols-3">
-          <div className="mx-auto">
-            <PhotoUpload />
-          </div>
-
           <div className="grid w-full gap-2 sm:col-span-2">
             <ResumeInput label={t<string>('builder.leftSidebar.sections.basics.name.label')} path="basics.name" />
 
