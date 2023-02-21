@@ -1,4 +1,3 @@
-import { PhotoFilter } from '@mui/icons-material';
 import { Button, Divider, Popover } from '@mui/material';
 import { useTranslation } from 'next-i18next';
 import { useState } from 'react';
