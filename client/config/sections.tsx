@@ -1,25 +1,17 @@
 import {
   Architecture,
-  CardGiftcard,
   Category,
-  Coffee,
   Download,
-  EmojiEvents,
   FontDownload,
-  Groups,
-  Language,
   Link as LinkIcon,
   Map,
   Margin,
-  MenuBook,
   Palette,
   Person,
-  Sailing,
   School,
   Settings as SettingsIcon,
   Share,
   Style,
-  Twitter,
   VolunteerActivism,
   Work,
 } from '@mui/icons-material';
@@ -83,66 +75,10 @@ export const left: SidebarSection[] = [
     ),
   },
   {
-    id: 'awards',
-    icon: <EmojiEvents />,
-    component: (
-      <Section type={'awards'} path="sections.awards" titleKey="title" subtitleKey="awarder" isEditable isHideable />
-    ),
-  },
-  {
-    id: 'certifications',
-    icon: <CardGiftcard />,
-    component: (
-      <Section
-        type={'certifications'}
-        path="sections.certifications"
-        titleKey="name"
-        subtitleKey="issuer"
-        isEditable
-        isHideable
-      />
-    ),
-  },
-  {
-    id: 'publications',
-    icon: <MenuBook />,
-    component: (
-      <Section
-        type={'publications'}
-        path="sections.publications"
-        titleKey="name"
-        subtitleKey="publisher"
-        isEditable
-        isHideable
-      />
-    ),
-  },
-  {
     id: 'skills',
     icon: <Architecture />,
     component: (
       <Section type={'skills'} path="sections.skills" titleKey="name" subtitleKey="level" isEditable isHideable />
-    ),
-  },
-  {
-    id: 'languages',
-    icon: <Language />,
-    component: (
-      <Section type={'languages'} path="sections.languages" titleKey="name" subtitleKey="level" isEditable isHideable />
-    ),
-  },
-  {
-    id: 'interests',
-    icon: <Sailing />,
-    component: (
-      <Section
-        type={'interests'}
-        path="sections.interests"
-        titleKey="name"
-        subtitleKey="keywords"
-        isEditable
-        isHideable
-      />
     ),
   },
   {
@@ -154,34 +90,6 @@ export const left: SidebarSection[] = [
         path="sections.volunteer"
         titleKey="organization"
         subtitleKey="position"
-        isEditable
-        isHideable
-      />
-    ),
-  },
-  {
-    id: 'projects',
-    icon: <Coffee />,
-    component: (
-      <Section
-        type={'projects'}
-        path="sections.projects"
-        titleKey="name"
-        subtitleKey="description"
-        isEditable
-        isHideable
-      />
-    ),
-  },
-  {
-    id: 'references',
-    icon: <Groups />,
-    component: (
-      <Section
-        type={'references'}
-        path="sections.references"
-        titleKey="name"
-        subtitleKey="relationship"
         isEditable
         isHideable
       />
