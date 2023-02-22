@@ -34,6 +34,7 @@ import Theme from '@/components/build/RightSidebar/sections/Theme';
 import Typography from '@/components/build/RightSidebar/sections/Typography';
 import { SidebarSection } from '@/types/app';
 
+
 export const left: SidebarSection[] = [
   {
     id: 'basics',
