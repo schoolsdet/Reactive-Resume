@@ -55,16 +55,6 @@ export const left: SidebarSection[] = [
     component: <Location />,
   },
   {
-    id: 'location',
-    icon: <Map />,
-    component: <Location />,
-  },
-  {
-    id: 'location',
-    icon: <Map />,
-    component: <Location />,
-  },
-  {
     id: 'profiles',
     icon: <Twitter />,
     component: <Profiles />,
